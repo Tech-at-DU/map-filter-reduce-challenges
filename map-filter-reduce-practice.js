@@ -99,7 +99,7 @@ console.log("ratingsByName:", ratingsByName);
 // These methods return arrays, so you can chain them.
 
 // TODO 12: Filter `primes` to numbers less than 10, then reduce to sum
-// expected: 18  (1+2+3+5+7)
+// expected: 17  (2+3+5+7)
 const underTenSum = null;
 console.log("underTenSum:", underTenSum);
 
