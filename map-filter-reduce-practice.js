@@ -1,138 +1,115 @@
-// Try these map filter and reduce practice problems
+/**
+ * map / filter / reduce practice
+ *
+ * Rules:
+ * - Solve each TODO using ONLY map, filter, and/or reduce.
+ * - Console.log after each solution to self-check.
+ *
+ * Notes:
+ * - The `primes` array includes 1, which is NOT prime.
+ *   Keep it anyway for practice, or remove it if you want correctness.
+ */
 
-const names = ['anatoly', 'bobby', 'carlsen', 'gary', 'fabiano']
-const primes = [1,2,3,5,7,11,13]
+const names = ["anatoly", "bobby", "carlsen", "gary", "fabiano"];
+const primes = [2, 3, 5, 7, 11, 13];
+
 const users = [
-	{
-		name: 'anatoly',
-		rating: 2848
-	}, 
-	{
-		name: 'bobby',
-		rating: 2785
-	},
-	{
-		name: 'carlsen',
-		rating: 2882
-	},
-	{
-		name: 'gary',
-		rating: 2851
-	},
-	{
-		name: 'fabiano',
-		rating: 2844
-	}
-]
-
-// Solve the problems below using map, filter, and reduce. 
-// Be sure to log the results to the console as you solve 
-// each problem to check your results. 
+  { name: "anatoly", rating: 2848 },
+  { name: "bobby", rating: 2785 },
+  { name: "carlsen", rating: 2882 },
+  { name: "gary", rating: 2851 },
+  { name: "fabiano", rating: 2844 },
+];
 
 // --------------------------------------------------------------
+// MAP
+// map transforms each item and returns a NEW array (same length).
 
-// Map problems
+// Example (provided): uppercase names
+const upperNames = names.map((name) => name.toUpperCase());
+console.log("upperNames:", upperNames);
+// expected: ["ANATOLY","BOBBY","CARLSEN","GARY","FABIANO"]
 
-// Create an array of uppercase names
-const upperNames = names.map(name => name.toUpperCase())
-console.log(upperNames)
+// TODO 1: Map `names` to an array of first 3 letters
+// expected: ["ana","bob","car","gar","fab"]
+const threeLetterNames = null;
+console.log("threeLetterNames:", threeLetterNames);
 
-// TODO: Map the names array to an array of three letter strings 
-// ['anatoly', 'bobby', 'carlsen'] -> ['ana', 'bob', 'car']
+// TODO 2: Map `primes` to squares
+// expected: [4,9,25,49,121,169]
+const primeSquares = null;
+console.log("primeSquares:", primeSquares);
 
+// TODO 3: Map `users` to just names
+// expected: ["anatoly","bobby","carlsen","gary","fabiano"]
+const userNames = null;
+console.log("userNames:", userNames);
 
-// TODO: Use map to create an array of squares from the primes array. 
-// [1,2,3,5,7,11,13] -> [1,4,9,25,49,121,169]
+// TODO 4: Map `users` to just ratings
+// expected: [2848,2785,2882,2851,2844]
+const userRatings = null;
+console.log("userRatings:", userRatings);
 
-
-// TODO: Map the users array into an array of name strings: 
-// [{ name: "anatoly", ... }, {}, {}] -> ['anatoly', 'bobby', 'carlsen']
-
-
-// TODO: Map the array of users to an array of ratings:
-// [{ name: "anatoly", rating: 2848 }, {}, {}] -> [2848, 2785, 2882]
-
-
-// TODO: Map the Users array into an array of string descriptions: 
-// [{ name: "anatoly", rating: 2848 }, {}, {}] -> ['name: anatoly rating: 2848', ...]
-
+// TODO 5: Map `users` to description strings
+// expected: ["anatoly rating: 2848", ...]
+const userDescriptions = null;
+console.log("userDescriptions:", userDescriptions);
 
 // --------------------------------------------------------------
+// FILTER
+// filter selects a subset and returns a NEW array (same or shorter length).
 
-// Filter
+// TODO 6: Filter `names` to those starting with "b"
+// expected: ["bobby"]
+const bNames = null;
+console.log("bNames:", bNames);
 
-// Use filter to create an array that has a subset of the items 
-// from the source array. 
+// TODO 7: Filter `primes` to numbers greater than 10
+// expected: [11,13]
+const overTen = null;
+console.log("overTen:", overTen);
 
-// TODO: Filter the names array to create a new array that 
-// that contains only names that begin with the letter 'b'
+// TODO 8: Filter `users` to ratings greater than 2850
+// expected: [{ name:"carlsen", ... }, { name:"gary", ... }]
+const strongUsers = null;
+console.log("strongUsers:", strongUsers);
 
+// --------------------------------------------------------------
+// REDUCE
+// reduce combines array items into ONE value (number, string, object, etc.)
+// Always provide an initial value: arr.reduce((acc, item) => ..., initialValue)
 
-// TODO: Filter the primes array to a new array that contains 
-// only numbers that are greater than 10
+// TODO 9: Reduce `names` to the first letters as one string
+// expected: "abcgf"
+const initials = null;
+console.log("initials:", initials);
 
+// TODO 10: Reduce `primes` to the total sum
+// expected: 42
+const primeSum = null;
+console.log("primeSum:", primeSum);
 
-// TODO: Filter the users array to a new array containing 
-// Users with a rating greater than 2850
+// TODO 11: Reduce `users` to an object mapping name -> rating
+// expected: { anatoly: 2848, bobby: 2785, ... }
+const ratingsByName = null;
+console.log("ratingsByName:", ratingsByName);
 
+// --------------------------------------------------------------
+// COMBINE: map + filter + reduce
+// These methods return arrays, so you can chain them.
 
-// ---------------------------------------------------------------
+// TODO 12: Filter `primes` to numbers less than 10, then reduce to sum
+// expected: 18  (1+2+3+5+7)
+const underTenSum = null;
+console.log("underTenSum:", underTenSum);
 
-// Reduce
+// TODO 13: Filter `users` to rating > 2850, then map to strings
+// expected: ["carlsen rating: 2882", "gary rating: 2851"]
+const topUserStrings = null;
+console.log("topUserStrings:", topUserStrings);
 
-// Use reduce to aggregate the contents of an array to 
-// a single new value. Usually you'll reduce to a number or 
-// string but sometimes you'll reduce to an array or object. 
-
-// Be sure to include an initial value when using reduce. This 
-// is the second praramter: arr.reduce(callBack, initalValue)
-// arr.reduce(() => {}, 0) <- here 0 is the intial value! 
-
-
-// TODO: Reduce the names array to a string made from the first 
-// letter of each string in the source array: 
-// ['anatoly', 'bobby', 'carlsen'] -> 'abc'
-
-
-
-// TODO: Reduce the primes array to the total sum of all 
-// numbers in the array. 
-// [1,2,3,5,7,11,13] -> 42
-
-
-
-// TODO: Reduce the users array to on object with the key 
-// as the name and value as the rating. For example: 
-// [{ name: "anatoly", rating: 2848 }, {}, {}] -> { 'anatoly': 2848, 'bobby': 2785, 'carlsen': 2882 }
-
-
-
-// ----------------------------------------------------------
-
-// Combine map filter and reduce!
-
-// You ,may have noticed that Map and Filter each return a 
-// new array. They do not modify the existing array. 
-// All arrays have these methods. This means you can chain 
-// them together like this: arr.map().filter(), or like
-// this: arr.filter().map(), or arr.map().filter().reduce()
-// Or any other combination you can think of. 
-
-// TODO: filter the primes array to numbers less than 10. Then 
-// reduce to get the sum. 
-// primes.filter().reduce() -> 18
-
-
-// TODO: filter the users array to get all of the players 
-// with ratings above 2850 and then map these objects to 
-// name and rating strings: 
-// users.filter().map() -> ['anatoly rating: 2848', ...]
-
-
-// TODO: Sometimes you'll run into data that is missing. 
-// often this will appear as undefined, or null. The 
-// array below has some undefined values. Filter these 
-// then get the sum. 
-
-const data = [23, 44, undefined, 12, undefined, 59, 83, 13, 42, 71, undefined]
-
+// TODO 14: Data cleanup: filter out undefined values, then reduce to sum
+const data = [23, 44, undefined, 12, undefined, 59, 83, 13, 42, 71, undefined];
+// expected sum: 347
+const dataSum = null;
+console.log("dataSum:", dataSum);
