@@ -1,17 +1,24 @@
 /**
- * map / filter / reduce practice
+ * map / filter / reduce worksheet
+ * Run with: node worksheet.js
  *
- * Rules:
- * - Solve each TODO using ONLY map, filter, and/or reduce.
- * - Console.log after each solution to self-check.
+ * Instructions:
+ * 1) Complete each TODO using ONLY map, filter, and reduce.
+ * 2) Do NOT use for/while loops.
+ * 3) Keep the console logs — they are your self-checks.
+ * 4) Submit this file when finished.
  *
- * Notes:
- * - The `primes` array includes 1, which is NOT prime.
- *   Keep it anyway for practice, or remove it if you want correctness.
+ * Important:
+ * - For each TODO, write your prediction FIRST (in the comment block).
+ * - Then write the code.
  */
 
+// ------------------------------------------------------------
+// DATA
+// ------------------------------------------------------------
+
 const names = ["anatoly", "bobby", "carlsen", "gary", "fabiano"];
-const primes = [2, 3, 5, 7, 11, 13];
+const primes = [1, 2, 3, 5, 7, 11, 13]; // Note: 1 is not prime, kept for practice.
 
 const users = [
   { name: "anatoly", rating: 2848 },
@@ -21,95 +28,258 @@ const users = [
   { name: "fabiano", rating: 2844 },
 ];
 
-// --------------------------------------------------------------
-// MAP
-// map transforms each item and returns a NEW array (same length).
-
-// Example (provided): uppercase names
-const upperNames = names.map((name) => name.toUpperCase());
-console.log("upperNames:", upperNames);
-// expected: ["ANATOLY","BOBBY","CARLSEN","GARY","FABIANO"]
-
-// TODO 1: Map `names` to an array of first 3 letters
-// expected: ["ana","bob","car","gar","fab"]
-const threeLetterNames = null;
-console.log("threeLetterNames:", threeLetterNames);
-
-// TODO 2: Map `primes` to squares
-// expected: [4,9,25,49,121,169]
-const primeSquares = null;
-console.log("primeSquares:", primeSquares);
-
-// TODO 3: Map `users` to just names
-// expected: ["anatoly","bobby","carlsen","gary","fabiano"]
-const userNames = null;
-console.log("userNames:", userNames);
-
-// TODO 4: Map `users` to just ratings
-// expected: [2848,2785,2882,2851,2844]
-const userRatings = null;
-console.log("userRatings:", userRatings);
-
-// TODO 5: Map `users` to description strings
-// expected: ["anatoly rating: 2848", ...]
-const userDescriptions = null;
-console.log("userDescriptions:", userDescriptions);
-
-// --------------------------------------------------------------
-// FILTER
-// filter selects a subset and returns a NEW array (same or shorter length).
-
-// TODO 6: Filter `names` to those starting with "b"
-// expected: ["bobby"]
-const bNames = null;
-console.log("bNames:", bNames);
-
-// TODO 7: Filter `primes` to numbers greater than 10
-// expected: [11,13]
-const overTen = null;
-console.log("overTen:", overTen);
-
-// TODO 8: Filter `users` to ratings greater than 2850
-// expected: [{ name:"carlsen", ... }, { name:"gary", ... }]
-const strongUsers = null;
-console.log("strongUsers:", strongUsers);
-
-// --------------------------------------------------------------
-// REDUCE
-// reduce combines array items into ONE value (number, string, object, etc.)
-// Always provide an initial value: arr.reduce((acc, item) => ..., initialValue)
-
-// TODO 9: Reduce `names` to the first letters as one string
-// expected: "abcgf"
-const initials = null;
-console.log("initials:", initials);
-
-// TODO 10: Reduce `primes` to the total sum
-// expected: 42
-const primeSum = null;
-console.log("primeSum:", primeSum);
-
-// TODO 11: Reduce `users` to an object mapping name -> rating
-// expected: { anatoly: 2848, bobby: 2785, ... }
-const ratingsByName = null;
-console.log("ratingsByName:", ratingsByName);
-
-// --------------------------------------------------------------
-// COMBINE: map + filter + reduce
-// These methods return arrays, so you can chain them.
-
-// TODO 12: Filter `primes` to numbers less than 10, then reduce to sum
-// expected: 17  (2+3+5+7)
-const underTenSum = null;
-console.log("underTenSum:", underTenSum);
-
-// TODO 13: Filter `users` to rating > 2850, then map to strings
-// expected: ["carlsen rating: 2882", "gary rating: 2851"]
-const topUserStrings = null;
-console.log("topUserStrings:", topUserStrings);
-
-// TODO 14: Data cleanup: filter out undefined values, then reduce to sum
 const data = [23, 44, undefined, 12, undefined, 59, 83, 13, 42, 71, undefined];
-// expected sum: 347
-const dataSum = null;
-console.log("dataSum:", dataSum);
+
+// ------------------------------------------------------------
+// HELPERS (do not edit)
+// ------------------------------------------------------------
+
+function section(title) {
+  console.log("\n" + "-".repeat(60));
+  console.log(title);
+  console.log("-".repeat(60));
+}
+
+function show(label, value, expected) {
+  console.log(`${label}:`, value);
+  if (expected !== undefined) console.log(`expected:`, expected);
+}
+
+// ------------------------------------------------------------
+// PART 0 — WARMUP EXAMPLE (provided)
+// ------------------------------------------------------------
+
+section("PART 0 — WARMUP (example provided)");
+
+const upperNames = names.map((name) => name.toUpperCase());
+show("upperNames", upperNames, ["ANATOLY", "BOBBY", "CARLSEN", "GARY", "FABIANO"]);
+
+// ------------------------------------------------------------
+// PART 1 — MAP
+// map transforms every item and returns a new array (same length).
+// ------------------------------------------------------------
+
+section("PART 1 — MAP");
+
+/**
+ * TODO 1: Map `names` to an array of first 3 letters.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * ["ana","bob","car","gar","fab"]
+ */
+const threeLetterNames = null; // <-- replace null
+show("threeLetterNames", threeLetterNames, ["ana", "bob", "car", "gar", "fab"]);
+
+/**
+ * TODO 2: Map `primes` to squares.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * [1,4,9,25,49,121,169]
+ */
+const primeSquares = null; // <-- replace null
+show("primeSquares", primeSquares, [1, 4, 9, 25, 49, 121, 169]);
+
+/**
+ * TODO 3: Map `users` to just user names.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * ["anatoly","bobby","carlsen","gary","fabiano"]
+ */
+const userNames = null; // <-- replace null
+show("userNames", userNames, ["anatoly", "bobby", "carlsen", "gary", "fabiano"]);
+
+/**
+ * TODO 4: Map `users` to description strings like:
+ * "anatoly rating: 2848"
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * ["anatoly rating: 2848", "bobby rating: 2785", ...]
+ */
+const userDescriptions = null; // <-- replace null
+show("userDescriptions", userDescriptions, [
+  "anatoly rating: 2848",
+  "bobby rating: 2785",
+  "carlsen rating: 2882",
+  "gary rating: 2851",
+  "fabiano rating: 2844",
+]);
+
+// ------------------------------------------------------------
+// PART 2 — FILTER
+// filter keeps items that return true (new array, same or shorter length).
+// ------------------------------------------------------------
+
+section("PART 2 — FILTER");
+
+/**
+ * TODO 5: Filter `names` to those starting with "b".
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * ["bobby"]
+ */
+const bNames = null; // <-- replace null
+show("bNames", bNames, ["bobby"]);
+
+/**
+ * TODO 6: Filter `primes` to numbers greater than 10.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * [11,13]
+ */
+const overTen = null; // <-- replace null
+show("overTen", overTen, [11, 13]);
+
+/**
+ * TODO 7: Filter `users` to rating > 2850.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * [{ name: "carlsen", rating: 2882 }, { name: "gary", rating: 2851 }]
+ */
+const strongUsers = null; // <-- replace null
+show("strongUsers", strongUsers, [
+  { name: "carlsen", rating: 2882 },
+  { name: "gary", rating: 2851 },
+]);
+
+// ------------------------------------------------------------
+// PART 3 — REDUCE
+// reduce combines all items into ONE value. Always provide an initial value.
+// ------------------------------------------------------------
+
+section("PART 3 — REDUCE");
+
+/**
+ * TODO 8: Reduce `names` into the first letters as one string.
+ * Example: ["anatoly","bobby","carlsen"] -> "abc"
+ *
+ * Prediction:
+ * - final type:
+ *
+ * Expected:
+ * "abcgf"
+ */
+const initials = null; // <-- replace null
+show("initials", initials, "abcgf");
+
+/**
+ * TODO 9: Reduce `primes` to the total sum.
+ *
+ * Prediction:
+ * - final type:
+ *
+ * Expected:
+ * 42
+ */
+const primeSum = null; // <-- replace null
+show("primeSum", primeSum, 42);
+
+/**
+ * TODO 10: Reduce `users` into an object mapping name -> rating.
+ *
+ * Prediction:
+ * - final type:
+ *
+ * Expected:
+ * { anatoly: 2848, bobby: 2785, carlsen: 2882, gary: 2851, fabiano: 2844 }
+ */
+const ratingsByName = null; // <-- replace null
+show("ratingsByName", ratingsByName, {
+  anatoly: 2848,
+  bobby: 2785,
+  carlsen: 2882,
+  gary: 2851,
+  fabiano: 2844,
+});
+
+// ------------------------------------------------------------
+// PART 4 — COMBINE METHODS (CHAINING)
+// ------------------------------------------------------------
+
+section("PART 4 — COMBINE METHODS");
+
+/**
+ * TODO 11: Filter `primes` to numbers < 10, then reduce to sum.
+ *
+ * Prediction:
+ * - final type:
+ *
+ * Expected:
+ * 18  (1+2+3+5+7)
+ */
+const underTenSum = null; // <-- replace null
+show("underTenSum", underTenSum, 18);
+
+/**
+ * TODO 12: Filter `users` to rating > 2850, then map to description strings.
+ *
+ * Prediction:
+ * - result length:
+ * - item type:
+ *
+ * Expected:
+ * ["carlsen rating: 2882", "gary rating: 2851"]
+ */
+const topUserStrings = null; // <-- replace null
+show("topUserStrings", topUserStrings, ["carlsen rating: 2882", "gary rating: 2851"]);
+
+/**
+ * TODO 13: Filter out undefined values from `data`, then reduce to sum.
+ *
+ * Prediction:
+ * - final type:
+ *
+ * Expected:
+ * 347
+ */
+const dataSum = null; // <-- replace null
+show("dataSum", dataSum, 347);
+
+// ------------------------------------------------------------
+// REFLECTION (students fill in answers)
+// ------------------------------------------------------------
+
+section("REFLECTION (write answers below as comments)");
+
+/**
+ * 1) When should you use map instead of filter?
+ *
+ * 2) Why does map always return the same number of items?
+ *
+ * 3) What role does the accumulator play in reduce?
+ *
+ * 4) Which problem was hardest—and why?
+ */
+
+// ------------------------------------------------------------
+// END
+// ------------------------------------------------------------
+
+section("DONE (If any values show `null`, you still have TODOs!)");
